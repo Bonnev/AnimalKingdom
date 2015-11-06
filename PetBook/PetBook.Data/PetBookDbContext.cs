@@ -3,16 +3,16 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class PetBookDbContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext()
+        public PetBookDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static PetBookDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new PetBookDbContext();
         }
     }
 }
