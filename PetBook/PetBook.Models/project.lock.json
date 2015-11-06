@@ -3,6 +3,22 @@
   "version": -9996,
   "targets": {
     ".NETPlatform,Version=v5.0": {
+      "EntityFramework/6.1.0": {},
+      "Microsoft.AspNet.Identity.Core/2.2.1": {},
+      "Microsoft.AspNet.Identity.EntityFramework/2.2.1": {
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.1",
+          "EntityFramework": "6.1.0"
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin/2.2.1": {
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.1",
+          "Microsoft.Owin.Security": "2.1.0",
+          "Microsoft.Owin.Security.Cookies": "2.1.0",
+          "Microsoft.Owin.Security.OAuth": "2.1.0"
+        }
+      },
       "Microsoft.CSharp/4.0.0-beta-23019": {
         "dependencies": {
           "System.Runtime": "4.0.20-beta-23019",
@@ -29,6 +45,34 @@
           "lib/dotnet/Microsoft.CSharp.dll": {}
         }
       },
+      "Microsoft.Owin/2.1.0": {
+        "dependencies": {
+          "Owin": "1.0"
+        }
+      },
+      "Microsoft.Owin.Security/2.1.0": {
+        "dependencies": {
+          "Owin": "1.0",
+          "Microsoft.Owin": "2.1.0"
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/2.1.0": {
+        "dependencies": {
+          "Owin": "1.0",
+          "Microsoft.Owin": "2.1.0",
+          "Microsoft.Owin.Security": "2.1.0"
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/2.1.0": {
+        "dependencies": {
+          "Owin": "1.0",
+          "Microsoft.Owin": "2.1.0",
+          "Newtonsoft.Json": "4.5.11",
+          "Microsoft.Owin.Security": "2.1.0"
+        }
+      },
+      "Newtonsoft.Json/4.5.11": {},
+      "Owin/1.0": {},
       "System.Collections/4.0.10-beta-23019": {
         "dependencies": {
           "System.Runtime": "4.0.0-beta-23019"
@@ -219,6 +263,66 @@
     }
   },
   "libraries": {
+    "EntityFramework/6.1.0": {
+      "serviceable": true,
+      "sha512": "u/M0OEfqxTUsL5BwzD66eBGm278/ozqdLK3JvMO6QwUxxc+z7ZUkTYm4suDhWRqzkc6mOhvXDQY5dZUwbldxyQ==",
+      "files": [
+        "EntityFramework.6.1.0.nupkg",
+        "EntityFramework.6.1.0.nupkg.sha512",
+        "EntityFramework.nuspec",
+        "content/App.config.transform",
+        "content/Web.config.transform",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.xml",
+        "tools/about_EntityFramework.help.txt",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
+    "Microsoft.AspNet.Identity.Core/2.2.1": {
+      "serviceable": true,
+      "sha512": "jjurNglpmcv0SLBd4Fmar8ZoJ2yqfTf6iuP3p8wVH7Nvanfo8l3qTBzq3qRQz2BQlb6iXJiDWPjcnIImVz512g==",
+      "files": [
+        "Microsoft.AspNet.Identity.Core.2.2.1.nupkg",
+        "Microsoft.AspNet.Identity.Core.2.2.1.nupkg.sha512",
+        "Microsoft.AspNet.Identity.Core.nuspec",
+        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
+        "lib/net45/Microsoft.AspNet.Identity.Core.xml"
+      ]
+    },
+    "Microsoft.AspNet.Identity.EntityFramework/2.2.1": {
+      "serviceable": true,
+      "sha512": "g3tCS3vZ+hPjqrGrkq2hpl2Wc5Ltaj+kInZM80uENHldTHmrvCpVXvTXcvTt7HU3vupjmYFfNWVFRWCypNZgug==",
+      "files": [
+        "Microsoft.AspNet.Identity.EntityFramework.2.2.1.nupkg",
+        "Microsoft.AspNet.Identity.EntityFramework.2.2.1.nupkg.sha512",
+        "Microsoft.AspNet.Identity.EntityFramework.nuspec",
+        "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll",
+        "lib/net45/Microsoft.AspNet.Identity.EntityFramework.xml"
+      ]
+    },
+    "Microsoft.AspNet.Identity.Owin/2.2.1": {
+      "serviceable": true,
+      "sha512": "Cz/dqC85+6bgPj9Mt1qGLJ+v8HdTqXTMe1ms4e8pzPXJjDJw3DK7XtimtDtWwiDs63vnIDgy195TByV9wxEwjA==",
+      "files": [
+        "Microsoft.AspNet.Identity.Owin.2.2.1.nupkg",
+        "Microsoft.AspNet.Identity.Owin.2.2.1.nupkg.sha512",
+        "Microsoft.AspNet.Identity.Owin.nuspec",
+        "lib/net45/Microsoft.AspNet.Identity.Owin.dll",
+        "lib/net45/Microsoft.AspNet.Identity.Owin.xml"
+      ]
+    },
     "Microsoft.CSharp/4.0.0-beta-23019": {
       "sha512": "TsYR8ylpBw89cxCTzA9eD8wqLR5u4TnNvUCLU7Qt9TlbxmNM0jPaz80L4N+W81kEoOpchlckGGCTA4JVemmEVA==",
       "files": [
@@ -233,6 +337,85 @@
         "ref/net45/_._",
         "ref/netcore50/Microsoft.CSharp.dll",
         "ref/win8/_._"
+      ]
+    },
+    "Microsoft.Owin/2.1.0": {
+      "serviceable": true,
+      "sha512": "lk0kK64mlmcmtWX8YOYkZsnZKDoGEzMZhe8e1bcP+FFcgD4f2QfKwvu5Z8Bh8WS0VO7Rgk+DJ0hwW0k+S/UGMg==",
+      "files": [
+        "Microsoft.Owin.2.1.0.nupkg",
+        "Microsoft.Owin.2.1.0.nupkg.sha512",
+        "Microsoft.Owin.nuspec",
+        "lib/net40/Microsoft.Owin.dll",
+        "lib/net40/Microsoft.Owin.XML",
+        "lib/net45/Microsoft.Owin.dll",
+        "lib/net45/Microsoft.Owin.XML"
+      ]
+    },
+    "Microsoft.Owin.Security/2.1.0": {
+      "serviceable": true,
+      "sha512": "4n1V0p+O6W1L0xHUM8Cjp2Y+MmmUkiCZv6PvRNIDCJD9zlerBJa2HECo9lUiWC+KuasQJ3QxB1FmipNBxdXXIQ==",
+      "files": [
+        "Microsoft.Owin.Security.2.1.0.nupkg",
+        "Microsoft.Owin.Security.2.1.0.nupkg.sha512",
+        "Microsoft.Owin.Security.nuspec",
+        "lib/net45/Microsoft.Owin.Security.dll",
+        "lib/net45/Microsoft.Owin.Security.XML"
+      ]
+    },
+    "Microsoft.Owin.Security.Cookies/2.1.0": {
+      "serviceable": true,
+      "sha512": "P+3cjwBpUDGF+5s+oMfyySG0qvLqb71M+1q9jGSsaF0qCg14ix0qF5pEV6IqhGUEgV40E/1K4hDcWjS+essVoQ==",
+      "files": [
+        "Microsoft.Owin.Security.Cookies.2.1.0.nupkg",
+        "Microsoft.Owin.Security.Cookies.2.1.0.nupkg.sha512",
+        "Microsoft.Owin.Security.Cookies.nuspec",
+        "lib/net45/Microsoft.Owin.Security.Cookies.dll",
+        "lib/net45/Microsoft.Owin.Security.Cookies.xml"
+      ]
+    },
+    "Microsoft.Owin.Security.OAuth/2.1.0": {
+      "serviceable": true,
+      "sha512": "jR/LoeV02Cne9IV6fG4L9KR+uofPLokq6sxGy4bBDxLAAmZ35y0H/NiV6riqXSee6PypNAcJzTytJpYb0xK6Hw==",
+      "files": [
+        "Microsoft.Owin.Security.OAuth.2.1.0.nupkg",
+        "Microsoft.Owin.Security.OAuth.2.1.0.nupkg.sha512",
+        "Microsoft.Owin.Security.OAuth.nuspec",
+        "lib/net45/Microsoft.Owin.Security.OAuth.dll",
+        "lib/net45/Microsoft.Owin.Security.OAuth.XML"
+      ]
+    },
+    "Newtonsoft.Json/4.5.11": {
+      "sha512": "IZ0vmfvcJrUONMIG3St+1EzSlnHc9qFY6/FU2YMHNXaGtdm6sSwIUAdXPAw1k3IwpxjVmZ0w9Pzszd8GkyrpFA==",
+      "files": [
+        "Newtonsoft.Json.4.5.11.nupkg",
+        "Newtonsoft.Json.4.5.11.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl4+wp7+win8/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl4+wp7+win8/Newtonsoft.Json.xml",
+        "lib/sl3-wp/Newtonsoft.Json.dll",
+        "lib/sl3-wp/Newtonsoft.Json.xml",
+        "lib/sl4/Newtonsoft.Json.dll",
+        "lib/sl4/Newtonsoft.Json.xml",
+        "lib/sl4-windowsphone71/Newtonsoft.Json.dll",
+        "lib/sl4-windowsphone71/Newtonsoft.Json.xml",
+        "lib/winrt45/Newtonsoft.Json.dll",
+        "lib/winrt45/Newtonsoft.Json.xml"
+      ]
+    },
+    "Owin/1.0": {
+      "sha512": "OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+      "files": [
+        "Owin.1.0.nupkg",
+        "Owin.1.0.nupkg.sha512",
+        "Owin.nuspec",
+        "lib/net40/Owin.dll"
       ]
     },
     "System.Collections/4.0.10-beta-23019": {
@@ -537,7 +720,9 @@
       "System.Linq >= 4.0.0-beta-23019",
       "System.Threading >= 4.0.10-beta-23019",
       "System.Runtime >= 4.0.10-beta-23019",
-      "Microsoft.CSharp >= 4.0.0-beta-23019"
+      "Microsoft.CSharp >= 4.0.0-beta-23019",
+      "Microsoft.AspNet.Identity.EntityFramework >= 2.2.1",
+      "Microsoft.AspNet.Identity.Owin >= 2.2.1"
     ],
     ".NETPlatform,Version=v5.0": []
   }
