@@ -246,6 +246,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetBook.Data\PetBook.Data.csproj">
+      <Project>{f4d280b1-c03e-420e-897f-afd48b04afdf}</Project>
+      <Name>PetBook.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PetBook.Models\PetBook.Models.csproj">
+      <Project>{535ea8ba-bb8b-4da9-b5bf-4136d5401d83}</Project>
+      <Name>PetBook.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

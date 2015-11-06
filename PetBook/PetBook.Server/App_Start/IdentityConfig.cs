@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PetBook.Server.Models;
+using PetBook.Models;
+using PetBook.Data;
 
 namespace PetBook.Server
 {

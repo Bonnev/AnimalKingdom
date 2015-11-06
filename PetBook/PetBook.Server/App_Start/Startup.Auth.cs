@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using PetBook.Server.Models;
+using PetBook.Models;
+using PetBook.Data;
 
 namespace PetBook.Server
 {

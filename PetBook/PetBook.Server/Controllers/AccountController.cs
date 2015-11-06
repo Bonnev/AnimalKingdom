@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PetBook.Server.Models;
+using PetBook.Models;
 
 namespace PetBook.Server.Controllers
 {
