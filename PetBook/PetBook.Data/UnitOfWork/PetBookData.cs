@@ -23,6 +23,11 @@
             this.repositories = new Dictionary<Type, object>();
         }
 
+        public IRepository<User> Users
+        {
+            get { return this.GetRepository<User>(); }
+        }
+
         public IRepository<Animal> Animals
         {
             get { return this.GetRepository<Animal>(); }

@@ -5,6 +5,8 @@
 
     public interface IPetBookData
     {
+        IRepository<User> Users { get; }
+
         IRepository<Animal> Animals { get; }
 
         IRepository<AnimalType> AnimalTypes { get; }
