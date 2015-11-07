@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace AnimalKingdom.Server.Controllers
+﻿namespace AnimalKingdom.Server.Controllers
 {
-    public class HomeController : Controller
+    using System.Web.Mvc;
+    using Data.UnitOfWork;
+
+    public class HomeController : BaseController
     {
+        public HomeController(IAnimalKingdomData data)
+            : base(data)
+        {
+        }
+
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult About()
         {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "People who made this project such a success:";
-
-            return View();
+            return this.View();
         }
     }
 }

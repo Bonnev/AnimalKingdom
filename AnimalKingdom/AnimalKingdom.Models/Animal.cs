@@ -17,6 +17,10 @@
 
         public int Age { get; set; }
 
+        public int HeightCm { get; set; }
+
+        public virtual AnimalType Type { get; set; }
+
         public virtual Breed Breed { get; set; }
 
         [Required]
@@ -24,8 +28,6 @@
 
         [Required]
         public DbGeography Location { get; set; }
-
-        public double Height { get; set; }
 
         public string AdditionalInformation { get; set; }
 

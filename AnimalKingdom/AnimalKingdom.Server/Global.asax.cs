@@ -16,6 +16,7 @@
 
             SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin"));
 
+            MapperConfig.RegisterMappings();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

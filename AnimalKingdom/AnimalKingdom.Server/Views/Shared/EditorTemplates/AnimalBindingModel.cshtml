@@ -1,0 +1,78 @@
+﻿@model AnimalKingdom.Server.Models.BindingModels.AnimalBindingModel
+@using (Html.BeginForm("Add", "Animals", FormMethod.Post, new { @class = "form-horizontal clearfix" }))
+{
+    <fieldset class="col-md-7">
+        <legend>Информация</legend>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Age, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.EditorFor(m => m.Age, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Height, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.EditorFor(m => m.Height, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.AdditionalInformation, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.TextAreaFor(m => m.AdditionalInformation, new { @class = "form-control", rows = 5 })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.GenderId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(
+                   m => m.GenderId,
+                   ViewBag.Genders as IEnumerable<SelectListItem>,
+                   new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.TypeId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(
+                   m => m.TypeId,
+                   ViewBag.Types as IEnumerable<SelectListItem>,
+                   new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.BreedId, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(
+                   m => m.BreedId,
+                   ViewBag.Breeds as IEnumerable<SelectListItem>,
+                   new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.OtherFinderIds, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                <input type="text" id="otherFinderIds" />
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="col-md-5">
+        <legend>Местоположение</legend>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Location, new { @class = "col-md-3 control-label" })
+            <div class="col-md-9">
+                @Html.EditorFor(m => m.Location)
+            </div>
+        </div>
+    </fieldset>
+    @Html.AntiForgeryToken()
+    <div class="col-md-10 col-md-push-2">
+        <input type="submit" value="Добави" class="btn btn-success" />
+        <input type="reset" value="Отказ" class="btn btn-default" />
+    </div>
+}
