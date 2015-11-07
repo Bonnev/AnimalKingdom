@@ -1,44 +1,18 @@
 ﻿namespace PetBook.Models
 {
     using System;
+    using System.Data.Entity.Spatial;
 
     public class Event
     {
-        private DateTime startDate;
-        private DateTime endDate;
-        private string place;
-        private string type;
+        public int Id { get; set; }
 
-        public Event(DateTime startDate, DateTime endDate, string place, string type)
-        {
-            this.StartDate = startDate;
-            this.EndDate = endDate;
-            this.Place = place;
-            this.Type = type;
-        }
+        public DateTime StartTime { get; set; }
 
-        public DateTime StartDate
-        {
-            get { return this.startDate; }
-            set { this.startDate = value; }
-        }
+        public DateTime EndTime { get; set; }
 
-        public DateTime EndDate
-        {
-            get { return this.endDate; }
-            set { this.endDate = value; }
-        }
+        public DbGeography Location { get; set; }
 
-        public string Place
-        {
-            get { return this.place; }
-            set { this.place = value; }
-        }
-
-        public string Type
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
+        public virtual EventType Type { get; set; }
     }
 }

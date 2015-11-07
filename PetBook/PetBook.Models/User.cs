@@ -3,18 +3,29 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.Collections.Generic;
+    using System.Data.Entity.Spatial;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
     public class User : IdentityUser
     {
-        private List<Animal> pets = new List<Animal>();
-
-        public List<Animal> Pets
+        public User()
         {
-            get { return this.pets; }
-            set { this.pets = value; }
+            this.FoundAnimals = new HashSet<Animal>();
+            this.AdoptedAnimals = new HashSet<Animal>();
+            this.Donations = new HashSet<Donation>();
+            this.Medals = new HashSet<Medal>();
         }
+
+        public DbGeography Location { get; set; }
+
+        public virtual ICollection<Animal> FoundAnimals { get; set; }
+
+        public virtual ICollection<Animal> AdoptedAnimals { get; set; }
+
+        public virtual ICollection<Donation> Donations { get; set; }
+
+        public virtual ICollection<Medal> Medals { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

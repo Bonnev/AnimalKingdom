@@ -2,24 +2,10 @@
 {
     public class Donation
     {
-        private User user;
-        private decimal amount;
+        public int Id { get; set; }
 
-        public Donation(User user, decimal amount)
-        {
-            this.User = user;
-            this.Amount = amount;
-        }
+        public virtual User User { get; set; }
 
-        public User User
-        {
-            get { return this.user; }
-            set { this.user = value; }
-        }
-        public decimal Amount
-        {
-            get { return this.amount; }
-            set { this.amount = value; }
-        }
+        public decimal Amount { get; set; }
     }
 }

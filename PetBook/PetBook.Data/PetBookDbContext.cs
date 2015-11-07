@@ -6,7 +6,7 @@
     public class PetBookDbContext : IdentityDbContext<User>
     {
         public PetBookDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("PetBookConnection", throwIfV1Schema: false)
         {
         }
 

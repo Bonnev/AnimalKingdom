@@ -1,29 +1,14 @@
 ﻿namespace PetBook.Models
 {
     using System.Collections.Generic;
-    using Enums;
+    //using Enums;
 
     public class Medal
     {
-        private List<User> users;
-        private Medals type;
+        public int Id { get; set; }
 
-        public Medal(Medals type)
-        {
-            this.Users = new List<User>();
-            this.Type = type;
-        }
+        public virtual MedalType MedalType { get; set; }
 
-        public List<User> Users
-        {
-            get { return this.users; }
-            set { this.users = value; }
-        }
-
-        public Medals Type
-        {
-            get { return this.type; }
-            set { this.type = value; }
-        }
+        public virtual ICollection<User> Users { get; set; }
     }
 }
