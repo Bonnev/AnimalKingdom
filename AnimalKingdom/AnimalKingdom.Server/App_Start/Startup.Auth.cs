@@ -8,6 +8,7 @@ using Owin;
 using AnimalKingdom.Server.Models;
 using AnimalKingdom.Models;
 using AnimalKingdom.Data;
+using AnimalKingdom.Common;
 
 namespace AnimalKingdom.Server
 {
@@ -56,9 +57,9 @@ namespace AnimalKingdom.Server
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: AppKeys.FacebookAppId,
+               appSecret: AppKeys.FacebookAppSecret);
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

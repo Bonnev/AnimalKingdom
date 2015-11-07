@@ -68,5 +68,23 @@ namespace AnimalKingdom.Common {
                 return ResourceManager.GetString("DefaultAdminPassword", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1687865051429434.
+        /// </summary>
+        public static string FacebookAppId {
+            get {
+                return ResourceManager.GetString("FacebookAppId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dd1bd21a2f5566358c8da1a037c60248.
+        /// </summary>
+        public static string FacebookAppSecret {
+            get {
+                return ResourceManager.GetString("FacebookAppSecret", resourceCulture);
+            }
+        }
     }
 }

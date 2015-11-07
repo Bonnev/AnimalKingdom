@@ -6,8 +6,8 @@
     public class ExternalLoginConfirmationViewModel
     {
         [Required(ErrorMessage = "Полето {0} е задължително")]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "Потребителско име")]
+        public string Username { get; set; }
     }
 
     public class ExternalLoginListViewModel
