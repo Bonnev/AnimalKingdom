@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace AnimalKingdom.Server.Models
+﻿namespace AnimalKingdom.Server.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -25,15 +25,15 @@ namespace AnimalKingdom.Server.Models
 
     public class VerifyCodeViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         public string Provider { get; set; }
 
-        [Required]
-        [Display(Name = "Code")]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [Display(Name = "Код")]
         public string Code { get; set; }
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
+        [Display(Name = "Запомни този браузър")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -41,64 +41,70 @@ namespace AnimalKingdom.Server.Models
 
     public class ForgotViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [Display(Name = "Потребителско име")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Парола")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Запомни ме")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [MinLength(5, ErrorMessage = "Потребителското име трябва да бъде с дължина поне 5 символа.")]
+        [Display(Name = "Потребителско име")]
+        public string Username { get; set; }
+
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [EmailAddress(ErrorMessage = "Полето {0} не съдържа правилен email адрес")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [Display(Name = "Име и фамилия")]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [StringLength(100, ErrorMessage = "{0}та трябва да бъде с дължина поне {2} символа.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Парола")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Парола (отново)")]
+        [Compare("Password", ErrorMessage = "Паролите не съвпадат.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class ResetPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [EmailAddress(ErrorMessage = "Полето {0} не съдържа правилен email адрес")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [StringLength(100, ErrorMessage = "{0}та трябва да бъде с дължина поне {2} символа.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Парола")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Парола (отново)")]
+        [Compare("Password", ErrorMessage = "Паролите не съвпадат.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -106,8 +112,8 @@ namespace AnimalKingdom.Server.Models
 
     public class ForgotPasswordViewModel
     {
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [EmailAddress(ErrorMessage = "Полето {0} не съдържа правилен email адрес")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }

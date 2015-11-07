@@ -1,16 +1,20 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
-
-namespace AnimalKingdom.Server.Models
+﻿namespace AnimalKingdom.Server.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.Owin.Security;
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
+
         public IList<UserLoginInfo> Logins { get; set; }
+
         public string PhoneNumber { get; set; }
+
         public bool TwoFactor { get; set; }
+
         public bool BrowserRemembered { get; set; }
     }
 
@@ -27,54 +31,54 @@ namespace AnimalKingdom.Server.Models
 
     public class SetPasswordViewModel
     {
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [StringLength(100, ErrorMessage = "Новата парола трябва да бъде с дължина поне {2} символа.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Нова парола")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Нова парола (отново)")]
+        [Compare("NewPassword", ErrorMessage = "Паролите не съвпадат.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class ChangePasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "Текуща парола")]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [StringLength(100, ErrorMessage = "Новата парола трябва да бъде с дължина поне {2} символа.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "Нова парола")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "Нова парола (отново)")]
+        [Compare("NewPassword", ErrorMessage = "Паролите не съвпадат.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class AddPhoneNumberViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         [Phone]
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Телефон")]
         public string Number { get; set; }
     }
 
     public class VerifyPhoneNumberViewModel
     {
-        [Required]
-        [Display(Name = "Code")]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [Display(Name = "Код")]
         public string Code { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Полето {0} е задължително")]
         [Phone]
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Телефон")]
         public string PhoneNumber { get; set; }
     }
 

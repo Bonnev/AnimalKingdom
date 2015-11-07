@@ -87,7 +87,7 @@ namespace AnimalKingdom.Server.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Невалиден потребител или парола.");
                     return View(model);
             }
         }
@@ -152,7 +152,7 @@ namespace AnimalKingdom.Server.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Name, Email = model.Email };
+                var user = new User { UserName = model.Username, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
