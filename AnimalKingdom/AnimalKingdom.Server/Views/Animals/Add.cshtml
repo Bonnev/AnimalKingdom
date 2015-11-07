@@ -1,0 +1,57 @@
+﻿@model AnimalKingdom.Server.Models.BindingModels.AnimalBindingModel
+@{
+    ViewBag.Title = "Добавяне на животно";
+}
+
+<h2>@ViewBag.Title</h2>
+@Html.EditorForModel()
+
+@section Styles {
+    <link rel="stylesheet" href="~/Content/kendo.common.min.css" />
+    <link rel="stylesheet" href="~/Content/kendo.common-bootstrap.core.min.css" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/kendo")
+    <script>
+        $(document).ready(function () {
+            $("#otherFinderIds").kendoAutoComplete({
+                dataSource: {
+                    serverFiltering: true,
+                    transport: {
+                        read: {
+                            url: "/Users/All",
+                            type: "POST",
+                            dataType: "json"
+                        },
+                        parameterMap: function (options, operation) {
+                            debugger;
+                            var values = $("#otherFinderIds").data("kendoAutoComplete").value().split(", ");
+                            values.pop();
+                            $.each(values, function (index, item) {
+                                options.filter.filters.push({ field: "Username", ignoreCase: true, operator: "neq", value: item });
+                            });
+
+                            return options;
+                        }
+                    },
+                    schema: {
+                        model: {
+                            id: "Id",
+                            fields: {
+                                Id: { type: "id" },
+                                Name: { type: "string" }
+                            }
+                        }
+                    }
+                },
+                dataTextField: "Username",
+                filter: "contains",
+                minLength: 3,
+                placeholder: "Потребителски имена",
+                separator: ", "
+            }).data("kendoAutoComplete");
+        });
+    </script>
+}
