@@ -296,6 +296,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnimalKingdom.Common\AnimalKingdom.Common.csproj">
+      <Project>{f93ecb15-ec6b-474e-8ff5-4768e9bae757}</Project>
+      <Name>AnimalKingdom.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimalKingdom.Data\AnimalKingdom.Data.csproj">
       <Project>{f4d280b1-c03e-420e-897f-afd48b04afdf}</Project>
       <Name>AnimalKingdom.Data</Name>
@@ -323,7 +327,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4135</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4135/</IISUrl>
+          <IISUrl>http://localhost:4242/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

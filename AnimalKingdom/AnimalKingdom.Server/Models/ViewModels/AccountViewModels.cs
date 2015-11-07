@@ -6,6 +6,11 @@
     public class ExternalLoginConfirmationViewModel
     {
         [Required(ErrorMessage = "Полето {0} е задължително")]
+        [Display(Name = "Потребителско име")]
+        public string Username { get; set; }
+
+        [Required(ErrorMessage = "Полето {0} е задължително")]
+        [EmailAddress(ErrorMessage = "Полето {0} не съдържа правилен email адрес")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -42,6 +47,7 @@
     public class ForgotViewModel
     {
         [Required(ErrorMessage = "Полето {0} е задължително")]
+        [EmailAddress(ErrorMessage = "Полето {0} не съдържа правилен email адрес")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
