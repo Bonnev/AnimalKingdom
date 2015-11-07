@@ -92,12 +92,13 @@
     <Compile Include="Animal.cs" />
     <Compile Include="Breed.cs" />
     <Compile Include="Donation.cs" />
+    <Compile Include="DonationType.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventType.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Medal.cs" />
     <Compile Include="MedalType.cs" />
-    <Compile Include="PetType.cs" />
+    <Compile Include="AnimalType.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
