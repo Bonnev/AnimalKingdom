@@ -85,6 +85,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="Donation.cs" />
+    <Compile Include="Enums\Medals.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Medal.cs" />
+    <Compile Include="Enums\Sexes.cs" />
+    <Compile Include="Enums\Sizes.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
