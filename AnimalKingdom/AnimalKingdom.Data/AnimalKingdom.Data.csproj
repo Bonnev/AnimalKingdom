@@ -94,6 +94,10 @@
     <Compile Include="UnitOfWork\PetBookData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnimalKingdom.Common\AnimalKingdom.Common.csproj">
+      <Project>{f93ecb15-ec6b-474e-8ff5-4768e9bae757}</Project>
+      <Name>AnimalKingdom.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimalKingdom.Models\AnimalKingdom.Models.csproj">
       <Project>{535ea8ba-bb8b-4da9-b5bf-4136d5401d83}</Project>
       <Name>PetBook.Models</Name>

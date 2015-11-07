@@ -97,7 +97,6 @@
     <Compile Include="EventType.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Medal.cs" />
-    <Compile Include="MedalType.cs" />
     <Compile Include="AnimalType.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="User.cs" />

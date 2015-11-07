@@ -21,8 +21,6 @@
 
         public DbSet<Medal> Medals { get; set; }
 
-        public DbSet<MedalType> MedalTypes { get; set; }
-
         public DbSet<Donation> Donations { get; set; }
 
         public DbSet<Event> Events { get; set; }

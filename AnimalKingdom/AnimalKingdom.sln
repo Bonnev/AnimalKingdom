@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalKingdom.Data", "Anima
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalKingdom.Models", "AnimalKingdom.Models\AnimalKingdom.Models.csproj", "{535EA8BA-BB8B-4DA9-B5BF-4136D5401D83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalKingdom.Common", "AnimalKingdom.Common\AnimalKingdom.Common.csproj", "{F93ECB15-EC6B-474E-8FF5-4768E9BAE757}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{535EA8BA-BB8B-4DA9-B5BF-4136D5401D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{535EA8BA-BB8B-4DA9-B5BF-4136D5401D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{535EA8BA-BB8B-4DA9-B5BF-4136D5401D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93ECB15-EC6B-474E-8FF5-4768E9BAE757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93ECB15-EC6B-474E-8FF5-4768E9BAE757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93ECB15-EC6B-474E-8FF5-4768E9BAE757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93ECB15-EC6B-474E-8FF5-4768E9BAE757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,12 @@
         public int Id { get; set; }
 
         [Required]
-        public virtual MedalType MedalType { get; set; }
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        [Required]
+        public string PictureUrl { get; set; }
 
         public virtual ICollection<User> Users { get; set; }
     }

@@ -53,11 +53,6 @@
             get { return this.GetRepository<Medal>(); }
         }
 
-        public IRepository<MedalType> MedalTypes
-        {
-            get { return this.GetRepository<MedalType>(); }
-        }
-
         public IRepository<Donation> Donations
         {
             get { return this.GetRepository<Donation>(); }

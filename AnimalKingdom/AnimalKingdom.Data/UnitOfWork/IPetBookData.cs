@@ -17,8 +17,6 @@
 
         IRepository<Medal> Medals { get; }
 
-        IRepository<MedalType> MedalTypes { get; }
-
         IRepository<Donation> Donations { get; }
 
         IRepository<Event> Events { get; }
