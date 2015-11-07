@@ -15,14 +15,12 @@ namespace AnimalKingdom.Server.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "People who made this project such a success:";
 
             return View();
         }
