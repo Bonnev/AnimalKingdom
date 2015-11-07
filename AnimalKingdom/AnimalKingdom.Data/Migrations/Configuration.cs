@@ -19,7 +19,7 @@ namespace AnimalKingdom.Data.Migrations
         {
             SeedAdminRoleAndAddAdmin(context);
             SeedAnimalTypes(context);
-            SeedAnimalBreeds(context);
+            SeedBreeds(context);
             SeedGenders(context);
             SeedMedals(context);
         }
@@ -49,6 +49,9 @@ namespace AnimalKingdom.Data.Migrations
 
         private static void SeedAnimalTypes(AnimalKingdomDbContext context)
         {
+            var newtype = new AnimalType() { Id = 1, Name = "Куче" };
+            string str = "кирилица";
+            string str2 = System.IO.File.ReadAllText(@"D:\AnimalKingdom\AnimalKingdom\AnimalKingdom.Data\Migrations\TextFile1.txt");
             context.AnimalTypes.AddOrUpdate(type => type.Id,
                 new AnimalType() { Id = 1, Name = "Куче" },
                 new AnimalType() { Id = 2, Name = "Котка" },
@@ -56,9 +59,10 @@ namespace AnimalKingdom.Data.Migrations
                 new AnimalType() { Id = 4, Name = "Хамстер" },
                 new AnimalType() { Id = 5, Name = "Птица" },
                 new AnimalType() { Id = 6, Name = "Неизвестен" });
+            context.SaveChanges();
         }
 
-        private static void SeedAnimalBreeds(AnimalKingdomDbContext context)
+        private static void SeedBreeds(AnimalKingdomDbContext context)
         {
             context.Breeds.AddOrUpdate(breed => breed.Id,
                 new Breed() { Name = "Хъски", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
@@ -71,7 +75,7 @@ namespace AnimalKingdom.Data.Migrations
                 new Breed() { Name = "Сиамска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
                 new Breed() { Name = "Персийска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
                 new Breed() { Name = "Европейска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") });
-
+            context.SaveChanges();
         }
 
         private static void SeedGenders(AnimalKingdomDbContext context)
@@ -80,6 +84,7 @@ namespace AnimalKingdom.Data.Migrations
                new Gender() { Id = 1, Name = "Мъжки" },
                new Gender() { Id = 2, Name = "Женски" },
                new Gender() { Id = 3, Name = "Неизвестен" });
+            context.SaveChanges();
         }
 
         private static void SeedMedals(AnimalKingdomDbContext context)
@@ -87,6 +92,7 @@ namespace AnimalKingdom.Data.Migrations
             context.Medals.AddOrUpdate(medal => medal.Id,
                new Medal() { Id = 1, Name = "5 дарения", Description = "Притежателят на този медал е направил 5 дарения за животни в нужда", PictureUrl = "five-donations.png" },
                new Medal() { Id = 1, Name = "3 осиновени животни", Description = "Притежателят на този медал има златно сърце и е осиновил 3 животни чрез системата", PictureUrl = "three-adopted-animals.png" });
+            context.SaveChanges();
         }
     }
 }
