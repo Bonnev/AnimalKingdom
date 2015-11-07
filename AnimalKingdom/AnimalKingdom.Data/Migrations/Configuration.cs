@@ -1,10 +1,10 @@
-namespace AnimalKingdom.Data.Migrations
+п»їnamespace AnimalKingdom.Data.Migrations
 {
+    using System.Data.Entity.Migrations;
+    using System.Linq;
     using Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
     using Common;
 
     public sealed class Configuration : DbMigrationsConfiguration<AnimalKingdomDbContext>
@@ -49,49 +49,46 @@ namespace AnimalKingdom.Data.Migrations
 
         private static void SeedAnimalTypes(AnimalKingdomDbContext context)
         {
-            var newtype = new AnimalType() { Id = 1, Name = "Куче" };
-            string str = "кирилица";
-            string str2 = System.IO.File.ReadAllText(@"D:\AnimalKingdom\AnimalKingdom\AnimalKingdom.Data\Migrations\TextFile1.txt");
             context.AnimalTypes.AddOrUpdate(type => type.Id,
-                new AnimalType() { Id = 1, Name = "Куче" },
-                new AnimalType() { Id = 2, Name = "Котка" },
-                new AnimalType() { Id = 3, Name = "Заек" },
-                new AnimalType() { Id = 4, Name = "Хамстер" },
-                new AnimalType() { Id = 5, Name = "Птица" },
-                new AnimalType() { Id = 6, Name = "Неизвестен" });
+                new AnimalType() { Id = 1, Name = "РљСѓС‡Рµ" },
+                new AnimalType() { Id = 2, Name = "РљРѕС‚РєР°" },
+                new AnimalType() { Id = 3, Name = "Р—Р°РµРє" },
+                new AnimalType() { Id = 4, Name = "РҐР°РјСЃС‚РµСЂ" },
+                new AnimalType() { Id = 5, Name = "РџС‚РёС†Р°" },
+                new AnimalType() { Id = 6, Name = "РќРµРёР·РІРµСЃС‚РµРЅ" });
             context.SaveChanges();
         }
 
         private static void SeedBreeds(AnimalKingdomDbContext context)
         {
             context.Breeds.AddOrUpdate(breed => breed.Id,
-                new Breed() { Name = "Хъски", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Лабрадор", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Самоед", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Доберман", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Немска овчарка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Британска късокосместа", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Синя руска", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Сиамска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Персийска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Европейска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") });
+                new Breed() { Name = "РҐСЉСЃРєРё", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљСѓС‡Рµ") },
+                new Breed() { Name = "Р›Р°Р±СЂР°РґРѕСЂ", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљСѓС‡Рµ") },
+                new Breed() { Name = "РЎР°РјРѕРµРґ", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљСѓС‡Рµ") },
+                new Breed() { Name = "Р”РѕР±РµСЂРјР°РЅ", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљСѓС‡Рµ") },
+                new Breed() { Name = "РќРµРјСЃРєР° РѕРІС‡Р°СЂРєР°", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљСѓС‡Рµ") },
+                new Breed() { Name = "Р‘СЂРёС‚Р°РЅСЃРєР° РєСЉСЃРѕРєРѕСЃРјРµСЃС‚Р°", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљРѕС‚РєР°") },
+                new Breed() { Name = "РЎРёРЅСЏ СЂСѓСЃРєР°", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљРѕС‚РєР°") },
+                new Breed() { Name = "РЎРёР°РјСЃРєР° РєРѕС‚РєР°", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљРѕС‚РєР°") },
+                new Breed() { Name = "РџРµСЂСЃРёР№СЃРєР° РєРѕС‚РєР°", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљРѕС‚РєР°") },
+                new Breed() { Name = "Р•РІСЂРѕРїРµР№СЃРєР° РєРѕС‚РєР°", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "РљРѕС‚РєР°") });
             context.SaveChanges();
         }
 
         private static void SeedGenders(AnimalKingdomDbContext context)
         {
             context.Genders.AddOrUpdate(gender => gender.Id,
-               new Gender() { Id = 1, Name = "Мъжки" },
-               new Gender() { Id = 2, Name = "Женски" },
-               new Gender() { Id = 3, Name = "Неизвестен" });
+               new Gender() { Id = 1, Name = "РњСЉР¶РєРё" },
+               new Gender() { Id = 2, Name = "Р–РµРЅСЃРєРё" },
+               new Gender() { Id = 3, Name = "РќРµРёР·РІРµСЃС‚РµРЅ" });
             context.SaveChanges();
         }
 
         private static void SeedMedals(AnimalKingdomDbContext context)
         {
             context.Medals.AddOrUpdate(medal => medal.Id,
-               new Medal() { Id = 1, Name = "5 дарения", Description = "Притежателят на този медал е направил 5 дарения за животни в нужда", PictureUrl = "five-donations.png" },
-               new Medal() { Id = 1, Name = "3 осиновени животни", Description = "Притежателят на този медал има златно сърце и е осиновил 3 животни чрез системата", PictureUrl = "three-adopted-animals.png" });
+               new Medal() { Id = 1, Name = "5 РґР°СЂРµРЅРёСЏ", Description = "РџСЂРёС‚РµР¶Р°С‚РµР»СЏС‚ РЅР° С‚РѕР·Рё РјРµРґР°Р» Рµ РЅР°РїСЂР°РІРёР» 5 РґР°СЂРµРЅРёСЏ Р·Р° Р¶РёРІРѕС‚РЅРё РІ РЅСѓР¶РґР°", PictureUrl = "five-donations.png" },
+               new Medal() { Id = 1, Name = "3 РѕСЃРёРЅРѕРІРµРЅРё Р¶РёРІРѕС‚РЅРё", Description = "РџСЂРёС‚РµР¶Р°С‚РµР»СЏС‚ РЅР° С‚РѕР·Рё РјРµРґР°Р» РёРјР° Р·Р»Р°С‚РЅРѕ СЃСЉСЂС†Рµ Рё Рµ РѕСЃРёРЅРѕРІРёР» 3 Р¶РёРІРѕС‚РЅРё С‡СЂРµР· СЃРёСЃС‚РµРјР°С‚Р°", PictureUrl = "three-adopted-animals.png" });
             context.SaveChanges();
         }
     }
