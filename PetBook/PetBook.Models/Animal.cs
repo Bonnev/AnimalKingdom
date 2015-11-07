@@ -15,14 +15,14 @@
 
         public Animal(string name, string type, string breed, uint age, Sexes sex, Sizes size, bool isAdopted, string moreInformation)
         {
-            this.name = name;
-            this.type = type;
-            this.breed = breed;
-            this.age = age;
-            this.sex = sex;
-            this.size = size;
-            this.isAdopted = isAdopted;
-            this.moreInformation = moreInformation;
+            this.Name = name;
+            this.Type = type;
+            this.Breed = breed;
+            this.Age = age;
+            this.Sex = sex;
+            this.Size = size;
+            this.IsAdopted = isAdopted;
+            this.MoreInformation = moreInformation;
         }
 
         public string Name

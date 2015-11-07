@@ -10,8 +10,8 @@
 
         public Medal(Medals type)
         {
-            this.users = new List<User>();
-            this.type = type;
+            this.Users = new List<User>();
+            this.Type = type;
         }
 
         public List<User> Users

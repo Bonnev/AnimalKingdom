@@ -11,10 +11,10 @@
 
         public Event(DateTime startDate, DateTime endDate, string place, string type)
         {
-            this.startDate = startDate;
-            this.endDate = endDate;
-            this.place = place;
-            this.type = type;
+            this.StartDate = startDate;
+            this.EndDate = endDate;
+            this.Place = place;
+            this.Type = type;
         }
 
         public DateTime StartDate

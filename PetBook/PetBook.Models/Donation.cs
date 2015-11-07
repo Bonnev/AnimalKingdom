@@ -7,8 +7,8 @@
 
         public Donation(User user, decimal amount)
         {
-            this.user = user;
-            this.amount = amount;
+            this.User = user;
+            this.Amount = amount;
         }
 
         public User User
