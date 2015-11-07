@@ -1,0 +1,21 @@
+﻿@using System.Collections.Generic
+
+@{
+    ViewBag.Title = "ViewAnimals";
+}
+
+<h2>ViewAnimals</h2>
+
+@Html.DropDownList("allAnimals", 
+    new List<SelectListItem>()
+    {
+        new SelectListItem()
+            {
+                Value = "one", Text = "one"
+            },
+    new SelectListItem()
+        {
+            Value="two", Text = "two"
+        }
+    })
+
