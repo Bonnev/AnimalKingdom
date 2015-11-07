@@ -211,3 +211,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+# Private keys which should not be uploaded publicly
+AppKeys.resx
