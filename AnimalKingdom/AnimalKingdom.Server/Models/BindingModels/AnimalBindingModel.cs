@@ -9,7 +9,7 @@
         public string Name { get; set; }
 
         [Display(Name = "Години")]
-        [Range(0, 20, ErrorMessage = "{0}те трябва да бъде между {1} и {2}")]
+        [Range(0, 20, ErrorMessage = "{0}те трябва да бъдат между {1} и {2}")]
         public int Age { get; set; }
 
         [Display(Name = "Височина (cm)")]

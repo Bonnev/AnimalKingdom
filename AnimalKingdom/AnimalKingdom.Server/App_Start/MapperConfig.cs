@@ -5,6 +5,7 @@
     using AutoMapper;
     using Models.ViewModels;
     using System.Linq;
+    using System.Data.Entity.Spatial;
 
     public static class MapperConfig
     {
@@ -19,6 +20,9 @@
                 .ForMember(vm => vm.Gender, opt => opt.MapFrom(a => a.Gender.Name))
                 .ForMember(vm => vm.FinderNames, opt => opt.MapFrom(a => a.Finders.Select(f => f.Name + " (" + f.UserName + ")")))
                 .ForMember(vm => vm.AdopterName, opt => opt.MapFrom(a => a.Adopter == null ? null : a.Adopter.Name + " (" + a.Adopter.UserName + ")"));
+            Mapper.CreateMap<Animal, AnimalLocationViewModel>()
+                .ForMember(vm => vm.Latitude, opt => opt.MapFrom(a => a.Location.Latitude))
+                .ForMember(vm => vm.Longitude, opt => opt.MapFrom(a => a.Location.Longitude));
         }
     }
 }

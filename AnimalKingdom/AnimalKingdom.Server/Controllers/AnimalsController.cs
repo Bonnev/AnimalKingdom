@@ -67,7 +67,7 @@
             animal.Location = DbGeography.FromText(string.Format("POINT ({0} {1})", locationParts[1], locationParts[0]));
             this.Data.Animals.Add(animal);
             this.Data.SaveChanges();
-            return this.View();
+            return this.RedirectToAction("Details", routeValues: new { id = animal.Id });
         }
 
         public ActionResult Details(int id)
@@ -80,6 +80,13 @@
 
             var model = Mapper.Map<AnimalDetailsViewModel>(animal);
             return this.View(model);
+        }
+
+        public ActionResult Locations()
+        {
+            var locations = this.Data.Animals.All();
+            var model = Mapper.Map<IEnumerable<AnimalLocationViewModel>>(locations);
+            return this.Json(model);
         }
     }
 }
