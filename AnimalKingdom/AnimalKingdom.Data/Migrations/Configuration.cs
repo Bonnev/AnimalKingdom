@@ -62,16 +62,16 @@
         private static void SeedBreeds(AnimalKingdomDbContext context)
         {
             context.Breeds.AddOrUpdate(breed => breed.Id,
-                new Breed() { Name = "Хъски", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Лабрадор", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Самоед", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Доберман", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Немска овчарка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
-                new Breed() { Name = "Британска късокосместа", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Синя руска", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Сиамска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Персийска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
-                new Breed() { Name = "Европейска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") });
+                new Breed() { Id = 1, Name = "Хъски", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
+                new Breed() { Id = 2, Name = "Лабрадор", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
+                new Breed() { Id = 3, Name = "Самоед", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
+                new Breed() { Id = 4, Name = "Доберман", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
+                new Breed() { Id = 5, Name = "Немска овчарка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Куче") },
+                new Breed() { Id = 6, Name = "Британска късокосместа", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
+                new Breed() { Id = 7, Name = "Синя руска", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
+                new Breed() { Id = 8, Name = "Сиамска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
+                new Breed() { Id = 9, Name = "Персийска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") },
+                new Breed() { Id = 10, Name = "Европейска котка", AnimalType = context.AnimalTypes.FirstOrDefault(type => type.Name == "Котка") });
             context.SaveChanges();
         }
 

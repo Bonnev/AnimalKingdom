@@ -1,7 +1,6 @@
 ﻿namespace AnimalKingdom.Server.Models.BindingModels
 {
     using System.ComponentModel.DataAnnotations;
-    using System.Data.Entity.Spatial;
 
     public class AnimalBindingModel
     {
@@ -14,8 +13,8 @@
         public int Age { get; set; }
 
         [Display(Name = "Височина (cm)")]
-        [Range(0, 400, ErrorMessage = "{0}та трябва да бъде между {1} и {2} cm")]
-        public int Height { get; set; }
+        [Range(0, 400, ErrorMessage = "Височината трябва да бъде между {1} и {2} cm")]
+        public int HeightCm { get; set; }
 
         [Display(Name = "Тип")]
         public int TypeId { get; set; }
@@ -27,12 +26,12 @@
         public int GenderId { get; set; }
 
         [Display(Name = "Местоположение")]
-        public DbGeography Location { get; set; }
+        public string Location { get; set; }
 
         [Display(Name = "Допълнителна информация")]
         public string AdditionalInformation { get; set; }
 
-        [Display(Name = "Открихме животното с")]
-        public string[] OtherFinderIds { get; set; }
+        [Display(Name = "Открито с")]
+        public string OtherFinderNames { get; set; }
     }
 }

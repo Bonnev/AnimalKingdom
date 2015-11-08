@@ -14,9 +14,42 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/kendo")
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxIzpYYlvx6QP3KniWHrh_bQPltypjVIk&callback=initMap" async defer></script>
     <script>
+        var map;
+        var marker;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("new-animal-map"), {
+                center: { lat: 42.803145, lng: 24.971192 },
+                zoom: 13
+            });
+
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                placeMarker(userLatLng);
+                map.setCenter(userLatLng);
+            });
+
+            google.maps.event.addListener(map, "click", function (e) {
+                placeMarker(e.latLng);
+            });
+
+            function placeMarker(location) {
+                if (marker) {
+                    marker.setPosition(location);
+                }
+                else {
+                    marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                }
+            }
+        }
+
         $(document).ready(function () {
-            $("#otherFinderIds").kendoAutoComplete({
+            $("#OtherFinderNames").kendoAutoComplete({
                 dataSource: {
                     serverFiltering: true,
                     transport: {
@@ -26,8 +59,7 @@
                             dataType: "json"
                         },
                         parameterMap: function (options, operation) {
-                            debugger;
-                            var values = $("#otherFinderIds").data("kendoAutoComplete").value().split(", ");
+                            var values = $("#OtherFinderNames").data("kendoAutoComplete").value().split(", ");
                             values.pop();
                             $.each(values, function (index, item) {
                                 options.filter.filters.push({ field: "Username", ignoreCase: true, operator: "neq", value: item });
@@ -52,6 +84,24 @@
                 placeholder: "Потребителски имена",
                 separator: ", "
             }).data("kendoAutoComplete");
+
+            $("#TypeId").change(function () {
+                var typeId = $(this).val();
+                var url = "/Breeds/All/" + typeId;
+                $.post(url, null, function (data) {
+                    var allBreeds = "";
+                    for (var item in data) {
+                        allBreeds += "<option value=\"" + data[item].Id + "\">" + data[item].Name + "</option>";
+                    }
+
+                    $("#BreedId").html(allBreeds);
+                });
+            });
+
+            $("#new-animal-form").on("submit", function (e) {
+                var markerValue = marker.position.lat() + ", " + marker.position.lng();
+                $("#Location").val(markerValue);
+            });
         });
     </script>
 }

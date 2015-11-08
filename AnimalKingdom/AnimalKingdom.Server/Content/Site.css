@@ -1,4 +1,4 @@
-﻿textarea:focus, input:focus{
+﻿textarea:focus, input:focus {
     outline: 0 !important;
 }
 
@@ -18,4 +18,14 @@ body {
 */
 .dl-horizontal dt {
     white-space: normal;
+}
+
+.k-autocomplete {
+    width: 21.85em;
+    height: 37px;
+}
+
+#new-animal-map {
+    height: 300px;
+    margin-bottom: 12px;
 }

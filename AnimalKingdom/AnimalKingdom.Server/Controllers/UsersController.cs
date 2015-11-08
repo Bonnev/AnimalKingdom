@@ -32,6 +32,9 @@ namespace AnimalKingdom.Server.Controllers
                 }
             }
 
+            users = users
+                .OrderBy(u => u.Id)
+                .Take(3);
             var model = Mapper.Map<IEnumerable<UserConciseViewModel>>(users);
             return this.Json(model);
         }
