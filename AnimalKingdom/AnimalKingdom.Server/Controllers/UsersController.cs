@@ -1,14 +1,13 @@
-﻿using AnimalKingdom.Data.UnitOfWork;
-using AnimalKingdom.Server.Models.ViewModels;
-using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace AnimalKingdom.Server.Controllers
+﻿namespace AnimalKingdom.Server.Controllers
 {
+    using AnimalKingdom.Data.UnitOfWork;
+    using AnimalKingdom.Server.Models.ViewModels;
+    using AutoMapper;
+    using Microsoft.AspNet.Identity;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
+
     public class UsersController : BaseController
     {
         public UsersController(IAnimalKingdomData data)
@@ -32,7 +31,10 @@ namespace AnimalKingdom.Server.Controllers
                 }
             }
 
+            // Remove the current user as s/he is already in the finders list,
+            // and take no more than 3 records (to avoid server overload)
             users = users
+                .Where(u => u.Id != User.Identity.GetUserId())
                 .OrderBy(u => u.Id)
                 .Take(3);
             var model = Mapper.Map<IEnumerable<UserConciseViewModel>>(users);
