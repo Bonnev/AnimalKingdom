@@ -1,0 +1,76 @@
+﻿@model AnimalKingdom.Server.Areas.Admin.Models.ViewModels.FacebookPageViewModel
+@{
+    ViewBag.Title = "Последни постове от " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+<ul id="page-posts" class="list-unstyled"></ul>
+<ul class="pagination hidden">
+    <li>
+        <a id="previous-page" href="#" aria-label="Previous" class="hidden">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+    </li>
+    <li>
+        <a id="next-page" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+    </li>
+</ul>
+<div class="row">
+    @Html.ActionLink("Към администрацията", "Index", new { controller = "Home", area = "Admin" }, new { @class = "btn btn-default" })
+</div>
+@section Scripts {
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1687865051429434',
+                cookie: true,
+                xfbml: true,
+                version: 'v2.5'
+            });
+
+            FB.getLoginStatus(function (response) {
+                if (response.status == "connected") {
+                    getPosts();
+                }
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function getPosts(url) {
+            if (url) {
+                $(".pagination #previous-page").removeClass("hidden");
+            }
+
+            FB.api(url || "/@Model.FacebookId/posts", function (posts) {
+                var allPosts = $("#page-posts");
+                allPosts.html("");
+                for (var i in posts.data) {
+                    if (posts.data[i].message) {
+                        $("<li />").html("<div class='well'>" + posts.data[i].message + "</div>").appendTo(allPosts);
+                    }
+                }
+
+                $(".pagination").removeClass("hidden");
+                $(".pagination #previous-page").attr("href", posts.paging.previous);
+                $(".pagination #next-page").attr("href", posts.paging.next);
+            });
+        }
+
+        $(".pagination #previous-page, .pagination #next-page").click(function (e) {
+            getPosts($(this).attr("href"));
+            $('body, html').animate({
+                scrollTop: 0
+            }, 1200);
+            e.preventDefault();
+        });
+    </script>
+}
