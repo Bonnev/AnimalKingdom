@@ -1,13 +1,17 @@
 ﻿@{
     ViewBag.Title = "Начало";
 }
-<div class="col-md-12">
-    <br />
-    @Html.ActionLink("Добави животно", "Add", "Animals", null, new { @class = "btn btn-success btn-lg" })
-    <br />
+<div class="row">
+    <div class="col-md-12">
+        <p style="font-size: 13pt;text-align: justify">Animal Kingdom е място, където всеки може да си намери нов домашен любимец или да съобщи за открито бездомно животно в района си. Притежателите на домашни любимци могат да организират и посещават различни събития - надбягвания с домашни любимци, конкурси и др.</p>
+        @Html.ActionLink("Добави животно", "Add", "Animals", null, new { @class = "btn btn-success btn-lg" })
+    </div>
 </div>
-<div id="all-animals-map"></div>
-
+<div class="row">
+    <div class="col-md-12">
+        <div id="all-animals-map"></div>
+    </div>
+</div>
 @section Scripts {
     <script>
         jQuery(function ($) {
