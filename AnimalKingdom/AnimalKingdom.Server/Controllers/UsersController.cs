@@ -18,6 +18,7 @@
         [HttpPost]
         public ActionResult All(FilterViewModel filter)
         {
+            string currentUserId = User.Identity.GetUserId();
             var users = this.Data.Users.All();
             foreach (var filterModel in filter.Filters)
             {
@@ -34,7 +35,7 @@
             // Remove the current user as s/he is already in the finders list,
             // and take no more than 3 records (to avoid server overload)
             users = users
-                .Where(u => u.Id != User.Identity.GetUserId())
+                .Where(u => u.Id != currentUserId)
                 .OrderBy(u => u.Id)
                 .Take(3);
             var model = Mapper.Map<IEnumerable<UserConciseViewModel>>(users);
