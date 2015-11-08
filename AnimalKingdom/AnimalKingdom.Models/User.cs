@@ -17,6 +17,8 @@
             this.Medals = new HashSet<Medal>();
         }
 
+        public string Name { get; set; }
+
         public DbGeography Location { get; set; }
 
         public virtual ICollection<Animal> FoundAnimals { get; set; }
