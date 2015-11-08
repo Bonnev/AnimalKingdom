@@ -37,6 +37,11 @@
             if (match.Groups.Count >= 2)
             {
                 var pageId = match.Groups[1].Value;
+                if (Regex.IsMatch(pageId, @"\-(\d+)"))
+                {
+                    pageId = Regex.Match(pageId, @"\-(\d+)").Groups[1].Value;
+                }
+
                 var fbPage = new FacebookPage() { FacebookId = pageId, Name = model.Title };
                 this.Data.FacebookPages.Add(fbPage);
                 this.Data.SaveChanges();
