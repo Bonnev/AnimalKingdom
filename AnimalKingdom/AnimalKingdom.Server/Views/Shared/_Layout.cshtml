@@ -26,6 +26,9 @@
                     {
                         <li>@Html.ActionLink("Администрация", "Index", new { area = "Admin" })</li>
                     }
+                    <li>
+                        @Html.ActionLink("Добави животно", "Add", "Animals", new { area = "" })
+                    </li>
                     @*<li>@Html.ActionLink("Add an animal", "AddAnimal", "Animal")</li>
                         <li>@Html.ActionLink("View all animals", "ViewAnimals", "Animal")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
@@ -39,7 +42,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Animal Kingdom by @Html.ActionLink("team Sirius", "About", "Home")</p>
+            <p>&copy; @DateTime.Now.Year - Animal Kingdom by team Sirius.</p>
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
