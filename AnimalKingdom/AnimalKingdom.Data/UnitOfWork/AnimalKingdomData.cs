@@ -68,6 +68,11 @@
             get { return this.GetRepository<EventType>(); }
         }
 
+        public IRepository<FacebookPage> FacebookPages
+        {
+            get { return this.GetRepository<FacebookPage>(); }
+        }
+
         public void SaveChanges()
         {
             this.context.SaveChanges();

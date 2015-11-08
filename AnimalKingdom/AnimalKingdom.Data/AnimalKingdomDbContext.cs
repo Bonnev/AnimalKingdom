@@ -27,6 +27,8 @@
 
         public DbSet<EventType> EventTypes { get; set; }
 
+        public DbSet<FacebookPage> FacebookPages { get; set; }
+
         public static AnimalKingdomDbContext Create()
         {
             return new AnimalKingdomDbContext();

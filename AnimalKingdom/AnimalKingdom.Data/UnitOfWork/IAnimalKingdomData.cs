@@ -23,6 +23,8 @@
 
         IRepository<EventType> EventTypes { get; }
 
+        IRepository<FacebookPage> FacebookPages { get; }
+
         void SaveChanges();
     }
 }

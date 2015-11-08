@@ -1,5 +1,5 @@
 ﻿@model AnimalKingdom.Server.Models.ViewModels.AnimalDetailsViewModel
-    @{ System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;}
+@{ System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;}
 <div class="col-md-12">
     <h2>@Model.Name</h2>
     <span class="fa fa-@(Model.Gender == "Мъжки" ? "mars":(Model.Gender == "Женски" ? "venus" : "question"))"></span> @Model.Type, на @Model.Age г.
@@ -17,17 +17,17 @@
             @if (Model.FinderNames.Count() == 1)
             {
                 @:<strong>Намери ме:</strong> @Model.FinderNames.FirstOrDefault()
-        }
+            }
             else
             {
-                @:<strong>Намериха ме:</strong> @string.Join(", ", Model.FinderNames);
-        }
+                @:<strong>Намериха ме:</strong> @string.Join(", ", Model.FinderNames)
+            }
             <br />
-            @(Model.IsAdopted ? "Осиновен/а съм :)" : "Не съм осиновен/а :(")
+            @(string.Format($"{(Model.IsAdopted ? "О" : "Не съм о")}синовен{(Model.Gender == "Мъжки" ? "" : (Model.Gender != "Женски" ? "/а" : "а"))} {(Model.IsAdopted ? "съм" : "")} :{(Model.IsAdopted ? ")" : "(")}"))
             @if (Model.AdopterName != null)
             {
                 @:<strong>Осиновител:</strong> @Model.AdopterName
-        }
+            }
         </div>
     </div>
 </div>
