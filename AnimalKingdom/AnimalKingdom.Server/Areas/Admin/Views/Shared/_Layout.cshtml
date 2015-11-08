@@ -35,7 +35,10 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
+        <div class="row">
+            <div class="col-md-3">@Html.Action("All", "FacebookPages")</div>
+            <div class="col-md-9">@RenderBody()</div>
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Animal Kingdom by @Html.ActionLink("team Sirius", "About", "Home")</p>

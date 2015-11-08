@@ -88,5 +88,11 @@
             var model = Mapper.Map<IEnumerable<AnimalLocationViewModel>>(locations);
             return this.Json(model);
         }
+
+        public ActionResult Adopt(int id)
+        {
+            ViewBag.AnimalName = this.Data.Animals.Find(id).Name;
+            return this.View();
+        }
     }
 }

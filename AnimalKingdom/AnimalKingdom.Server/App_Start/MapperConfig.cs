@@ -6,6 +6,8 @@
     using Models.ViewModels;
     using System.Linq;
     using System.Data.Entity.Spatial;
+    using Areas.Admin.Models;
+    using Areas.Admin.Models.ViewModels;
 
     public static class MapperConfig
     {
@@ -23,6 +25,7 @@
             Mapper.CreateMap<Animal, AnimalLocationViewModel>()
                 .ForMember(vm => vm.Latitude, opt => opt.MapFrom(a => a.Location.Latitude))
                 .ForMember(vm => vm.Longitude, opt => opt.MapFrom(a => a.Location.Longitude));
+            Mapper.CreateMap<FacebookPage, FacebookPageViewModel>();
         }
     }
 }

@@ -28,6 +28,10 @@
             {
                 @:<strong>Осиновител:</strong> @Model.AdopterName
             }
+            else
+            {
+                <a href="/Animals/Adopt/@Model.Id" class="btn btn-warning btn pull-right">Осинови ме</a>
+            }
         </div>
     </div>
 </div>
