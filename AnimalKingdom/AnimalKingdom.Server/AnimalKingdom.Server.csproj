@@ -206,6 +206,7 @@
     </Compile>
     <Compile Include="Models\BindingModels\AnimalBindingModel.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
+    <Compile Include="Models\ViewModels\AnimalDetailsViewModel.cs" />
     <Compile Include="Models\ViewModels\BreedConciseViewModel.cs" />
     <Compile Include="Models\ViewModels\FilterDescriptionViewModel.cs" />
     <Compile Include="Models\ViewModels\FilterViewModel.cs" />
@@ -248,6 +249,9 @@
     <Content Include="Content\Bootstrap\sprite_2x.png" />
     <Content Include="Content\Bootstrap\sprite_kpi.png" />
     <Content Include="Content\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\font-awesome-4.4.0\css\font-awesome.css" />
+    <Content Include="Content\font-awesome-4.4.0\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\kendo.common-bootstrap.core.min.css" />
     <Content Include="Content\kendo.common.min.css" />
     <Content Include="favicon.ico" />
@@ -258,6 +262,11 @@
     <Content Include="Images\Medals\three-adopted-animals.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome-4.4.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome-4.4.0\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -308,6 +317,8 @@
     <Content Include="Views\Animals\Add.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AnimalBindingModel.cshtml" />
     <Content Include="Scripts\kendo.ui.core.min.js.map" />
+    <Content Include="Views\Animals\Details.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\AnimalDetailsViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

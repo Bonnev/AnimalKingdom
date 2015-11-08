@@ -8,6 +8,8 @@
     using AnimalKingdom.Models;
     using Data.UnitOfWork;
     using Models.BindingModels;
+    using AutoMapper;
+    using Models.ViewModels;
 
     public class AnimalsController : BaseController
     {
@@ -66,6 +68,18 @@
             this.Data.Animals.Add(animal);
             this.Data.SaveChanges();
             return this.View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var animal = this.Data.Animals.Find(id);
+            if (animal == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            var model = Mapper.Map<AnimalDetailsViewModel>(animal);
+            return this.View(model);
         }
     }
 }

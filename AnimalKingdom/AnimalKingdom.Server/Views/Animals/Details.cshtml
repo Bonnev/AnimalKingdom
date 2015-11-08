@@ -1,0 +1,38 @@
+﻿@model AnimalKingdom.Server.Models.ViewModels.AnimalDetailsViewModel
+@{
+    ViewBag.Title = "Детайли за " + Model.Name;
+}
+
+@Html.DisplayForModel()
+
+@section Styles {
+    <link href="~/Content/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxIzpYYlvx6QP3KniWHrh_bQPltypjVIk&callback=initMap" async defer></script>
+    <script>
+        var map;
+        var marker;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("animal-map"), {
+                center: { lat: @Model.Location.Latitude, lng: @Model.Location.Longitude },
+                zoom: 15
+            });
+            placeMarker(map.center);
+
+            function placeMarker(location) {
+                if (marker) {
+                    marker.setPosition(location);
+                }
+                else {
+                    marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                }
+            }
+        }
+    </script>
+}

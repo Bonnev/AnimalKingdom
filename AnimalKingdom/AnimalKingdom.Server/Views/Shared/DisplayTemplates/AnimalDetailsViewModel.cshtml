@@ -1,0 +1,43 @@
+﻿@model AnimalKingdom.Server.Models.ViewModels.AnimalDetailsViewModel
+    @{ System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;}
+<div class="col-md-12">
+    <h2>@Model.Name</h2>
+    <span class="fa fa-@(Model.Gender == "Мъжки" ? "mars":(Model.Gender == "Женски" ? "venus" : "question"))"></span> @Model.Type, на @Model.Age г.
+</div>
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">За мен</h3>
+        </div>
+        <div class="panel-body">
+            <strong>Порода:</strong> @(Model.Breed != null ? Model.Breed : "Неизвестна")<br />
+            <strong>Височина:</strong> @Model.HeightCm cm<br />
+            <strong>Допълнителна информация:</strong> @(Model.AdditionalInformation != null ? Model.AdditionalInformation : "Няма")
+            <br />
+            @if (Model.FinderNames.Count() == 1)
+            {
+                @:<strong>Намери ме:</strong> @Model.FinderNames.FirstOrDefault()
+        }
+            else
+            {
+                @:<strong>Намериха ме:</strong> @string.Join(", ", Model.FinderNames);
+        }
+            <br />
+            @(Model.IsAdopted ? "Осиновен/а съм :)" : "Не съм осиновен/а :(")
+            @if (Model.AdopterName != null)
+            {
+                @:<strong>Осинови ме:</strong> @Model.AdopterName
+        }
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Местоположение</h3>
+        </div>
+        <div class="panel-body">
+            <div id="animal-map"></div>
+        </div>
+    </div>
+</div>
