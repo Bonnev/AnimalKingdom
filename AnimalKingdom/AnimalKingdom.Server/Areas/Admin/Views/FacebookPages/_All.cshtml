@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SelectListItem>
+<div class="panel panel-primary">
+    <div class="panel-heading">Всички страници</div>
+    <div class="panel-body">
+        <div class="list-group">
+            @if (!Model.Any())
+            {
+                @: В момента няма страници
+            }
+
+            @foreach (var page in Model)
+            {
+                bool isActive = ViewBag.CurrentPageId != null && ViewBag.CurrentPageId == page.Value;
+                string activeClass = isActive ? " active" : "";
+                @Html.ActionLink(page.Text, "Details", "FacebookPages", new { id = page.Value }, new { @class = "list-group-item" + activeClass })
+            }
+        </div>
+    </div>
+</div>

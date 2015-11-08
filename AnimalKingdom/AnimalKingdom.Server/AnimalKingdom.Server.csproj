@@ -196,7 +196,10 @@
     <Compile Include="App_Start\ViewEnginesConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FacebookPagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Models\BindingModels\FacebookPageBindingModel.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\FacebookPageViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -275,6 +278,9 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FacebookPages\_All.cshtml" />
+    <Content Include="Areas\Admin\Views\FacebookPages\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\FacebookPages\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -327,10 +333,10 @@
     <Content Include="Scripts\kendo.ui.core.min.js.map" />
     <Content Include="Views\Animals\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AnimalDetailsViewModel.cshtml" />
+    <Content Include="Views\Animals\Adopt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Animals\" />
   </ItemGroup>
   <ItemGroup>
